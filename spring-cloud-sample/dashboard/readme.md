@@ -1,4 +1,4 @@
 ##dashboard
-http://localhost:8900/
-### 需要写代码吗？
+http://192.168.1.13:8085/hystrix
+
 

@@ -1,3 +1,5 @@
+server:
+  port: 8086
 eureka:
   client:
     service-url:
@@ -23,7 +25,7 @@ spring:
       fail-fast: true
       username: root
       password: i
-      profile: csdn
+      profile: git
 management:
   endpoints:
     web:

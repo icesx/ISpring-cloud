@@ -15,8 +15,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/icesx/IResearch/
-          searchPaths: code/demo/spring-cloud/spring-cloud-config/config
+          uri: https://github.com/icesx/ISpring-cloud
+          searchPaths: spring-cloud-config/config
           username: 
           password: 
 eureka:

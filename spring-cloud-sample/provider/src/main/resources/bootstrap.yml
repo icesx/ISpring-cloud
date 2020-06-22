@@ -1,3 +1,5 @@
+server:
+  port: 8083
 eureka:
   client:
     service-url:
@@ -18,7 +20,7 @@ spring:
       fail-fast: true
       username: root
       password: i
-      profile: csdn
+      profile: git
   zipkin:
     base-url: http://localhost:8082
   sleuth:

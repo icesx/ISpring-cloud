@@ -1,3 +1,3 @@
 ### test
-curl http://localhost:8100/test/hello
-curl http://localhost:8100/test/list
+curl http://localhost:8083/test/hello
+curl http://localhost:8083/test/list
