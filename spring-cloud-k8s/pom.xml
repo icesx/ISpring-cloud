@@ -6,8 +6,6 @@
 
 	<packaging>pom</packaging>
 	<artifactId>spring-cloud-k8s</artifactId>
-	<groupId>cn.xportal.sc</groupId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-cloud-k8s</name>
 	<parent>
 		<groupId>cn.xportal.sc</groupId>
