@@ -6,23 +6,13 @@
 
 	<groupId>cn.xportal.sc</groupId>
 
-	<name>spring-cloud-sample</name>
+	<name>spring-cloud-config</name>
 	<parent>
 		<groupId>cn.xportal.sc</groupId>
-		<artifactId>ISpring-cloud</artifactId>
+		<artifactId>spring-cloud-common</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<modules>
-		<module>config</module>
-		<module>consumer</module>
-		<module>dashboard</module>
-		<module>eureka</module>
-		<module>provider</module>
-		<module>zipkin</module>
-		<module>zuul</module>
-	</modules>
-
-	<packaging>pom</packaging>
-	<artifactId>spring-cloud-sample</artifactId>
+	<packaging>jar</packaging>
+	<artifactId>spring-cloud-config</artifactId>
 </project>
 

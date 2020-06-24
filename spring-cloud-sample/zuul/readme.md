@@ -6,5 +6,6 @@
 Zuul是Netflix出品的一个基于JVM路由和服务端的负载均衡器.
 
 ### loadbanlance 
-curl http://localhost:8084/consumer/feign/list
-curl http://localhost:8084/consumer/ribbon/list
+> curl http://localhost:8084/consumer/feign/list
+
+>curl http://localhost:8084/consumer/ribbon/list
