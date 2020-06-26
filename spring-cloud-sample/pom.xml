@@ -11,12 +11,12 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<modules>
-		<module>consumer</module>
-		<module>dashboard</module>
-		<module>eureka</module>
-		<module>provider</module>
-		<module>zipkin</module>
-		<module>zuul</module>
+		<module>spring-cloud-consumer</module>
+		<module>spring-cloud-dashboard</module>
+		<module>spring-cloud-eureka</module>
+		<module>spring-cloud-provider</module>
+		<module>spring-cloud-zipkin</module>
+		<module>spring-cloud-zuul</module>
 	</modules>
 
 	<packaging>pom</packaging>

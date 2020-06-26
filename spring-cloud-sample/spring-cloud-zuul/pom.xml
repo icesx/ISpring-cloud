@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>dashboard</artifactId>
+	<artifactId>spring-cloud-zuul</artifactId>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>cn.xportal.sc</groupId>
@@ -12,6 +12,16 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<dependencies>
+		<dependency>
+			<groupId>io.zipkin.brave</groupId>
+			<artifactId>brave-instrumentation-http</artifactId>
+			<version>5.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.brave</groupId>
+			<artifactId>brave-instrumentation-servlet</artifactId>
+			<version>5.1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -23,15 +33,21 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -39,20 +55,8 @@
 		</dependency>
 	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Finchley.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<properties>
-		<start-class>cn.xportal.sc.dashboard.DashboardApplication</start-class>
+		<start-class>cn.xportal.sc.zuul.ZuulApplication</start-class>
 	</properties>
 	<build>
 		<plugins>
@@ -65,6 +69,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
 
