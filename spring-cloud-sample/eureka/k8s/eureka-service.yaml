@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-eureka-server
+spec:
+  selector:
+    app: eureka-server
+  ports:
+  - name: http
+    port: 10001
+    targetPort: 10001
