@@ -35,14 +35,48 @@
 
 	<properties>
 		<start-class>cn.xportal.sc.eureka.EurekaApplication</start-class>
+		<k8s.plugin.assemble.name>k8s</k8s.plugin.assemble.name>
+		<docker.buildArg.JAR_FILE>${k8s.plugin.assemble.name}/${project.build.finalName}.jar</docker.buildArg.JAR_FILE>
 	</properties>
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<skip>false</skip>
+					<mainClass>${start-class}</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>kubernetes-maven-plugin</artifactId>
+				<version>1.0.0-alpha-4</version>
+
+				<configuration>
+					<registry>bjrdc206.reg</registry>
+					<authConfig>
+						<username>admin</username>
+						<password>Harbor12345</password>
+					</authConfig>
+					<images>
+						<image>
+							<name>bjrdc-dev/${project.artifactId}:${project.version}</name>
+							<alias>${project.artifactId}</alias>
+							<build>
+								<assembly>
+									<name>${k8s.plugin.assemble.name}</name>
+								</assembly>
+								<contextDir>${project.basedir}</contextDir>
+								<dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile>
+							</build>
+						</image>
+					</images>
+					<access>
+						<username></username>
+						<password></password>
+						<masterUrl>https://172.16.15.17:6443</masterUrl>
+						<apiVersion></apiVersion>
+					</access>
 				</configuration>
 			</plugin>
 		</plugins>
