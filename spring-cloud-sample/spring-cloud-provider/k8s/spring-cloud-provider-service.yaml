@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-cloud-eureka
+  name: spring-cloud-provider
   namespace: bjrdc-dev
 spec:
   selector:
-    app: spring-cloud-eureka
+    app: spring-cloud-provider
   ports:
   - name: http
     port: 8080

@@ -1,0 +1,28 @@
+server:
+  port: 8083
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:i@spring-cloud-eureka.bjrdc-dev.svc.cluster.local:8080/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    appname: provider
+
+spring:
+  application:
+    name: provider
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      fail-fast: true
+      username: root
+      password: i
+      profile: git
+  zipkin:
+    base-url: http://spring-cloud-zipkin.bjrdc-dev.svc.cluster.local:8082
+  sleuth:
+    sampler:
+      percentage: 1.0

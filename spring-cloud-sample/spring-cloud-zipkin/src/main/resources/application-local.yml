@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: zipkin
-  profiles:
-    active: csdn
 eureka:
   client:
     service-url:

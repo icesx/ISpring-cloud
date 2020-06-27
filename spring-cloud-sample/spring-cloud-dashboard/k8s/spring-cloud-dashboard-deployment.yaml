@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-cloud-eureka
+  name: spring-cloud-dashboard
   namespace: bjrdc-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-cloud-eureka
+      app: spring-cloud-dashboard
   template:
     metadata:
       labels:
-        app: spring-cloud-eureka
+        app: spring-cloud-dashboard
     spec:
       containers:
-      - name: eureka-server
-        image: bjrdc206.reg/bjrdc-dev/spring-cloud-eureka:0.0.1-SNAPSHOT
+      - name: dashboard-server
+        image: bjrdc206.reg/bjrdc-dev/spring-cloud-dashboard:0.0.1-SNAPSHOT
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
-          containerPort: 8080
+          containerPort: 8085

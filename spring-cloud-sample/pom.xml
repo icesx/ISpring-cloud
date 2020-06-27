@@ -17,6 +17,7 @@
 		<module>spring-cloud-provider</module>
 		<module>spring-cloud-zipkin</module>
 		<module>spring-cloud-zuul</module>
+		<module>spring-cloud-environment</module>
 	</modules>
 
 	<packaging>pom</packaging>

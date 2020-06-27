@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-cloud-eureka
+  name: spring-cloud-zipkin
   namespace: bjrdc-dev
 spec:
   selector:
-    app: spring-cloud-eureka
+    app: spring-cloud-zipkin
   ports:
   - name: http
-    port: 8080
+    port: 8082

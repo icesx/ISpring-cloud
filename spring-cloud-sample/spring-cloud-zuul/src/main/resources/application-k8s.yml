@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://root:i@localhost:8080/eureka/
+      defaultZone: http://root:i@spring-cloud-eureka.bjrdc-dev.svc.cluster.local:8080/eureka/
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
@@ -11,7 +11,7 @@ eureka:
 
 spring:
   zipkin:
-    base-url: http://localhost:8082
+    base-url: http://spring-cloud-zipkin.bjrdc-dev.svc.cluster.local:8082
   sleuth:
     sampler:
       percentage: 1.0
@@ -25,4 +25,4 @@ spring:
       fail-fast: true
       username: root
       password: i
-      profile: git
+      
