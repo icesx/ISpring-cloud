@@ -7,4 +7,6 @@
 
 >Zipkin的设计是基于谷歌的Google Dapper论文
 
-###http://localhost:8082/zipkin/
+### 管理界面
+
+http://localhost:8082/zipkin/
