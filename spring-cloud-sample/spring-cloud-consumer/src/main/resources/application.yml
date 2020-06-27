@@ -20,7 +20,6 @@ spring:
       fail-fast: true
       username: root
       password: i
-      profile: git
 management:
   endpoints:
     web:

@@ -9,8 +9,6 @@ spring:
       password: i
   application:
     name: config
-  profiles:
-    active: git
   cloud:
     config:
       server:
