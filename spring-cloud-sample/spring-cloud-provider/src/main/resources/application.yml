@@ -1,0 +1,22 @@
+server:
+  port: 8083
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    appname: provider
+
+spring:
+  application:
+    name: provider
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      fail-fast: true
+      username: root
+      password: i
+  sleuth:
+    sampler:
+      percentage: 1.0

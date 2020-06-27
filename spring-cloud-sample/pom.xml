@@ -22,45 +22,7 @@
 
 	<packaging>pom</packaging>
 	<artifactId>spring-cloud-sample</artifactId>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Finchley.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>com.spotify</groupId>
-					<artifactId>dockerfile-maven-plugin</artifactId>
-					<version>1.4.13</version>
-					<executions>
-						<execution>
-							<id>default</id>
-							<goals>
-								<goal>build</goal>
-								<goal>push</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<skip>true</skip>
-						<repository>bjrdc206.reg/bjrdc-dev/${project.artifactId}</repository>
-						<tag>${project.version}</tag>
-						<buildArgs>
-							<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-						</buildArgs>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+	
 
 </project>
 

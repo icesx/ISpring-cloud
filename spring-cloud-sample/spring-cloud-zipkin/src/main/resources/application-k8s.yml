@@ -1,18 +1,4 @@
-server:
-  port: 8082
-spring:
-  application:
-    name: zipkin
 eureka:
   client:
     service-url:
       defaultZone: http://root:i@spring-cloud-eureka.bjrdc-dev.svc.cluster.local:8080/eureka/
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
-    appname: zipkin
-management:
-  metrics:
-    web:
-      server:
-        auto-time-requests: false

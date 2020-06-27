@@ -20,9 +20,6 @@ spring:
           username: 
           password: 
 eureka:
-  client:
-    service-url:
-      defaultZone: http://root:i@localhost:8080/eureka/
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
@@ -32,7 +29,7 @@ logging:
   level:
     root: INFO        
     org:
-      springframework:
+      springframework: 
         security: INFO
         web: INFO    
       hibernate: INFO        
