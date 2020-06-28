@@ -12,4 +12,6 @@ spec:
     metadata:
       labels:
         app: spring-cloud-eureka
-
+    spec:
+      containers:
+      - imagePullPolicy: Always

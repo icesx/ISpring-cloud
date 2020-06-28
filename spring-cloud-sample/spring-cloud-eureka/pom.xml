@@ -18,6 +18,8 @@
 	<properties>
 		<start-class>cn.xportal.sc.eureka.EurekaApplication</start-class>
 		<k8s.plugin.assemble.name>k8s</k8s.plugin.assemble.name>
+		<harbor.local>bjrdc206.reg</harbor.local>
+		<k8s.master.url>https://172.16.15.17:6443</k8s.master.url>
 		<docker.buildArg.JAR_FILE>${k8s.plugin.assemble.name}/${project.build.finalName}.jar</docker.buildArg.JAR_FILE>
 	</properties>
 	<build>
@@ -34,7 +36,7 @@
 				<artifactId>kubernetes-maven-plugin</artifactId>
 				<version>1.0.0-alpha-4</version>
 				<configuration>
-					<registry>bjrdc206.reg</registry>
+					<registry>${harbor.local}</registry>
 					<authConfig>
 						<username>admin</username>
 						<password>Harbor12345</password>
@@ -45,7 +47,7 @@
 					<images>
 
 						<image>
-							<registry>bjrdc206.reg</registry>
+							<registry>${harbor.local}</registry>
 							<name>bjrdc-dev/${project.artifactId}:${project.version}</name>
 							<alias>${project.artifactId}</alias>
 							<build>
@@ -59,7 +61,7 @@
 						</image>
 					</images>
 					<access>
-						<masterUrl>https://172.16.15.17:6443</masterUrl>
+						<masterUrl>${k8s.master.url}</masterUrl>
 					</access>
 				</configuration>
 				<executions>
