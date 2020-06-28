@@ -22,7 +22,6 @@
 
 	<packaging>pom</packaging>
 	<artifactId>spring-cloud-sample</artifactId>
-	
 
 </project>
 
