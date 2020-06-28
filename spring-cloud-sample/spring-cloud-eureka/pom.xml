@@ -46,6 +46,8 @@
 						<password>Harbor12345</password>
 					</authConfig>
 					<namespace>bjrdc-dev</namespace>
+					<kubernetesManifest>${project.build.directory}/jkube/kubernetes.yml</kubernetesManifest>
+					<targetDir>${project.build.directory}/jkube</targetDir>
 					<images>
 						<image>
 							<name>bjrdc-dev/${project.artifactId}:${project.version}</name>

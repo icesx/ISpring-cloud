@@ -22,6 +22,12 @@
 
 	<packaging>pom</packaging>
 	<artifactId>spring-cloud-sample</artifactId>
-
+	<dependencies>
+		<dependency>
+			<groupId>cn.xportal.sc</groupId>
+			<artifactId>spring-cloud-support</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>
 

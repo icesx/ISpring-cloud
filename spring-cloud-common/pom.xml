@@ -12,6 +12,7 @@
 	</parent>
 	<modules>
 		<module>spring-cloud-config</module>
+		<module>spring-cloud-support</module>
 	</modules>
 	<packaging>pom</packaging>
 	<artifactId>spring-cloud-common</artifactId>
