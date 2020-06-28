@@ -59,6 +59,26 @@
 mvn clean package spring-boot:repackage  k8s:build  k8s:resource k8s:push k8s:deploy
 ```
 
+> 或者执行如下命令，前提是需要将命令绑定到maven的phase
+>
+> ```
+> mvn clean package install
+> ```
+>
+> 
+
+```
+<execution>
+	<phase>install</phase>
+    <goals>
+        <goal>resource</goal>
+        <goal>build</goal>
+        <goal>push</goal>
+        <goal>deploy</goal>
+    </goals>
+</execution>
+```
+
 
 
 ### 验证
