@@ -4,22 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-cloud-support</artifactId>
+	<artifactId>spring-cloud-version-local</artifactId>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>cn.xportal.sc</groupId>
-		<artifactId>spring-cloud-common</artifactId>
+		<artifactId>spring-cloud-version</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
-
-	</dependencies>
-
 
 </project>
 

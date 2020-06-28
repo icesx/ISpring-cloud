@@ -13,11 +13,6 @@
 	</parent>
 	<dependencies>
 
-		<dependency>
-			<groupId>cn.xportal.sc</groupId>
-			<artifactId>spring-cloud-environment</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 	<properties>
@@ -38,7 +33,6 @@
 				<groupId>org.eclipse.jkube</groupId>
 				<artifactId>kubernetes-maven-plugin</artifactId>
 				<version>1.0.0-alpha-4</version>
-
 				<configuration>
 					<registry>bjrdc206.reg</registry>
 					<authConfig>
@@ -49,7 +43,9 @@
 					<kubernetesManifest>${project.build.directory}/jkube/kubernetes.yml</kubernetesManifest>
 					<targetDir>${project.build.directory}/jkube</targetDir>
 					<images>
+
 						<image>
+							<registry>bjrdc206.reg</registry>
 							<name>bjrdc-dev/${project.artifactId}:${project.version}</name>
 							<alias>${project.artifactId}</alias>
 							<build>
@@ -64,9 +60,19 @@
 					</images>
 					<access>
 						<masterUrl>https://172.16.15.17:6443</masterUrl>
-						<apiVersion></apiVersion>
 					</access>
 				</configuration>
+				<executions>
+					<execution>
+						<phase>deploy</phase>
+						<id>default</id>
+						<goals>
+							<goal>resource</goal>
+							<goal>build</goal>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

@@ -12,11 +12,4 @@ spec:
     metadata:
       labels:
         app: spring-cloud-eureka
-    spec:
-      containers:
-      - name: eureka-server
-        image: bjrdc206.reg/bjrdc-dev/spring-cloud-eureka:0.0.1-SNAPSHOT
-        imagePullPolicy: IfNotPresent
-        ports:
-        - name: http
-          containerPort: 8080
+

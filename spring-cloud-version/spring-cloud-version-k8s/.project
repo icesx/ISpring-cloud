@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>spring-cloud-environment</name>
+	<name>spring-cloud-version-k8s</name>
 	<comment></comment>
 	<projects>
 	</projects>

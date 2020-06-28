@@ -17,7 +17,6 @@
 		<module>spring-cloud-provider</module>
 		<module>spring-cloud-zipkin</module>
 		<module>spring-cloud-zuul</module>
-		<module>spring-cloud-environment</module>
 	</modules>
 
 	<packaging>pom</packaging>
@@ -28,6 +27,20 @@
 			<artifactId>spring-cloud-support</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>cn.xportal.sc</groupId>
+			<artifactId>spring-cloud-version-local</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
 

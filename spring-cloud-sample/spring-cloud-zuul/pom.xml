@@ -13,11 +13,6 @@
 	</parent>
 	<dependencies>
 		<dependency>
-			<groupId>cn.xportal.sc</groupId>
-			<artifactId>spring-cloud-environment</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>io.zipkin.brave</groupId>
 			<artifactId>brave-instrumentation-http</artifactId>
 			<version>5.1.0</version>
@@ -65,13 +60,6 @@
 	</properties>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<configuration>
-					<skip>false</skip>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 </project>

@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: k8s
+  cloud:
+    config: k8s
+    
