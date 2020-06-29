@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sc-eureka-ingress
+  namespace: bjrdc-dev
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "20M"
+spec:
+  rules:
+  - host: ingress.bjrdc17
+    http:
+      paths:
+      - path: /sc-eureka
+        backend:
+          serviceName: spring-cloud-eureka
+          servicePort: 8080

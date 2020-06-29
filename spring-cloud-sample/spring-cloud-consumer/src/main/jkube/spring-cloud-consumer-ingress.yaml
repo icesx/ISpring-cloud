@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sc-consumer-ingress
+  namespace: bjrdc-dev
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "20M"
+spec:
+  rules:
+  - host: ingress.bjrdc17
+    http:
+      paths:
+      - path: /sc-consumer
+        backend:
+          serviceName: spring-cloud-consumer
+          servicePort: 8086

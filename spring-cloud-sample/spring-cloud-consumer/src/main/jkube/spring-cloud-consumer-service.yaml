@@ -8,4 +8,4 @@ spec:
     app: spring-cloud-consumer
   ports:
   - name: http
-    port: 8080
+    port: 8086
