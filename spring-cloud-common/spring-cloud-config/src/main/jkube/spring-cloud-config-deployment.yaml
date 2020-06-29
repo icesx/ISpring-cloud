@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-cloud-consumer
+  name: spring-cloud-config
   namespace: bjrdc-dev
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: spring-cloud-consumer
   template:
     metadata:
       labels:
-        app: spring-cloud-consumer
+        app: spring-cloud-config
+    spec:
+      containers:
+      - imagePullPolicy: Always

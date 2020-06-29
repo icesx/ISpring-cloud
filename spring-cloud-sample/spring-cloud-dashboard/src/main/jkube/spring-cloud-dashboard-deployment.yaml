@@ -16,7 +16,7 @@ spec:
       containers:
       - name: dashboard-server
         image: bjrdc206.reg/bjrdc-dev/spring-cloud-dashboard:0.0.1-SNAPSHOT
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - name: http
           containerPort: 8085

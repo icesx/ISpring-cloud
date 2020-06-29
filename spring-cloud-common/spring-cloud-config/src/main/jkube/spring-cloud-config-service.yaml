@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-cloud-provider
+  name: spring-cloud-config
   namespace: bjrdc-dev
 spec:
   selector:
-    app: spring-cloud-provider
+    app: spring-cloud-config
   ports:
   - name: http
     port: 8081

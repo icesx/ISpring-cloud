@@ -16,7 +16,7 @@ spec:
       containers:
       - name: zuul-server
         image: bjrdc206.reg/bjrdc-dev/spring-cloud-zuul:0.0.1-SNAPSHOT
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - name: http
           containerPort: 8084

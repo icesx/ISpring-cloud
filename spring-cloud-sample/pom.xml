@@ -34,12 +34,6 @@
 		</dependency>
 
 	</dependencies>
-	<properties>
-		<k8s.plugin.assemble.name>k8s</k8s.plugin.assemble.name>
-		<harbor.local>bjrdc206.reg</harbor.local>
-		<k8s.master.url>https://172.16.15.17:6443</k8s.master.url>
-		<docker.buildArg.JAR_FILE>${k8s.plugin.assemble.name}/${project.build.finalName}.jar</docker.buildArg.JAR_FILE>
-	</properties>
 	<build>
 		<resources>
 			<resource>
@@ -63,51 +57,7 @@
 					<mainClass>${start-class}</mainClass>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.eclipse.jkube</groupId>
-				<artifactId>kubernetes-maven-plugin</artifactId>
-				<version>1.0.0-alpha-4</version>
-				<configuration>
-					<registry>${harbor.local}</registry>
-					<authConfig>
-						<username>admin</username>
-						<password>Harbor12345</password>
-					</authConfig>
-					<namespace>bjrdc-dev</namespace>
-					<kubernetesManifest>${project.build.directory}/jkube/kubernetes.yml</kubernetesManifest>
-					<targetDir>${project.build.directory}/jkube</targetDir>
-					<images>
 
-						<image>
-							<registry>${harbor.local}</registry>
-							<name>bjrdc-dev/${project.artifactId}:${project.version}</name>
-							<alias>${project.artifactId}</alias>
-							<build>
-								<assembly>
-									<name>${k8s.plugin.assemble.name}</name>
-								</assembly>
-								<contextDir>${project.basedir}</contextDir>
-								<dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile>
-								<!-- <cleanup>remove</cleanup> -->
-							</build>
-						</image>
-					</images>
-					<access>
-						<masterUrl>${k8s.master.url}</masterUrl>
-					</access>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>install</phase>
-						<goals>
-							<goal>resource</goal>
-							<goal>build</goal>
-							<goal>push</goal>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 </project>

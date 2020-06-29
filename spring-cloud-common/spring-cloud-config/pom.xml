@@ -11,10 +11,17 @@
 		<artifactId>spring-cloud-common</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
 	<dependencies>
+
 		<dependency>
 			<groupId>cn.xportal.sc</groupId>
-			<artifactId>spring-cloud-environment</artifactId>
+			<artifactId>spring-cloud-support</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.xportal.sc</groupId>
+			<artifactId>spring-cloud-version-k8s</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -36,18 +43,44 @@
 		</dependency>
 
 	</dependencies>
-
 	<properties>
-		<start-class>cn.xportal.sc.config.ConfigServerApplication</start-class>
+		<k8s.plugin.assemble.name>k8s</k8s.plugin.assemble.name>
+		<harbor.local>bjrdc206.reg</harbor.local>
+		<k8s.master.url>https://172.16.15.17:6443</k8s.master.url>
+		<docker.buildArg.JAR_FILE>${k8s.plugin.assemble.name}/${project.build.finalName}.jar</docker.buildArg.JAR_FILE>
+		<start-class>cn.xportal.sc.config.ConfigApplication</start-class>
 	</properties>
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/docker</directory>
+			</resource>
+			<resource>
+				<directory>src/main/jkube</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>${start-class}</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>kubernetes-maven-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
 
