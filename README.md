@@ -98,16 +98,86 @@
 
 ## spring-cloud-sample
 
+> 使用spring-cloud的原生组件，将整个组件打包成docker，部署到k8s上。
+
 ### 基本思路
 
 将本地可以执行的spring-cloud项目迁移到k8s上，实现spring-cloud的微服务的特性。需要解决的问题有
 
 1. spring-boot项目的docker化
+
 2. docker push到register
+
 3. 生成k8s的yaml文件，并启动service
+
 4. 通过ingress实现service的暴露
 
+5. 微服务的健康检查
+
+   
+
 ### kubernetes-maven-plugin
+
+> kmp 是一个从maven到k8s的插件，按照官方的说法，其是从著名的fabric8迁移过来的，用的也是fabric8的kubernetes-client相关api。可以使用
+>
+> 1. 自动打包image（k8s:build）
+> 2. image推送到registies服务器(k8s:push)
+> 3. 自动生成k8s的yaml文件（自动识别spring-boot的配置文件）(k8s:resource)
+> 4. 调用k8s的api推送yaml的文件，并执行(k8s:deploy)
+
+
+
+> kmp的配置如下
+>
+> ```
+> 	<properties>
+> 		<k8s.plugin.assemble.name>k8s</k8s.plugin.assemble.name>
+> 		<harbor.local>bjrdc206.reg</harbor.local>
+> 		<k8s.master.url>https://172.16.15.17:6443</k8s.master.url>
+> 		<docker.buildArg.JAR_FILE>${k8s.plugin.assemble.name}/${project.build.finalName}.jar</docker.buildArg.JAR_FILE>
+> 
+> 	</properties>
+>     	<build>
+> 		<plugins>
+> 				<plugin>
+> 					<groupId>org.eclipse.jkube</groupId>
+> 					<artifactId>kubernetes-maven-plugin</artifactId>
+> 					<version>1.0.0-alpha-4</version>
+> 					<configuration>
+> 						<registry>${harbor.local}</registry>
+> 						<authConfig>
+> 							<username>admin</username>
+> 							<password>Harbor12345</password>
+> 						</authConfig>
+> 						<namespace>bjrdc-dev</namespace>
+> 						<kubernetesManifest>${project.build.directory}/jkube/kubernetes.yml</kubernetesManifest>
+> 						<targetDir>${project.build.directory}/jkube</targetDir>
+> 						<images>
+> 
+> 							<image>
+> 								<registry>${harbor.local}</registry>
+> 								<name>bjrdc-dev/${project.artifactId}:${project.version}</name>
+> 								<alias>${project.artifactId}</alias>
+> 								<build>
+> 									<assembly>
+> 										<name>${k8s.plugin.assemble.name}</name>
+> 									</assembly>
+> 									<contextDir>${project.basedir}</contextDir>
+> 									<dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile>
+> 									<!-- <cleanup>remove</cleanup> -->
+> 								</build>
+> 							</image>
+> 						</images>
+> 						<access>
+> 							<masterUrl>${k8s.master.url}</masterUrl>
+> 						</access>
+> 					</configuration>
+> 				</plugin>
+> 		</plugins>
+> 	</build>
+> ```
+>
+> 
 
 #### docker
 

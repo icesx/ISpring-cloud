@@ -122,7 +122,13 @@ http://ingress.bjrdc17:30080/sc-eureka/
 2.consumer
 
 ```
+http://ingress.bjrdc17:30080/sc-consumer/
+```
 
+3.zipkin
+
+```
+http://ingress.bjrdc17:30080/zipkin/
 ```
 
 
