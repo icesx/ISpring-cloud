@@ -55,11 +55,45 @@
 > 5. 使用k8s的客户端程序将，yaml提交到k8s中，创建deployment、service、pod
 > 6. 需要提前将master服务器~/.kube/config文件创建到本地的~/.kube/config
 
-```
-mvn clean package spring-boot:repackage  k8s:build  k8s:resource k8s:push k8s:deploy
-```
+
+
+> maven 的命令有
+>
+> ```
+> mvn clean package spring-boot:repackage  k8s:build k8s:push k8s:resource k8s:undeploy k8s:deploy
+> ```
+>
+> ​	
+>
+> | 命令         | 说明                          |
+> | ------------ | ----------------------------- |
+> | k8s:build    | 创建docker images             |
+> | k8s:push     | 推送 image到harbor            |
+> | k8s:resource | 创k8s的yaml文件               |
+> | k8s:undeploy | 从k8s集群卸载之前的depolyment |
+> | k8s:deploy   | 部署yaml文件到k8s集群         |
+>
+> 
+
+
 
 > 或者执行如下命令，前提是需要将命令绑定到maven的phase
+>
+> ```
+> <executions>
+>     <execution>
+>     	<phase>install</phase>
+>     <goals>
+>     <goal>resource</goal>
+>         <goal>build</goal>
+>         <goal>push</goal>
+>         <goal>deploy</goal>
+>     </goals>
+>     </execution>
+> </executions>
+> ```
+>
+> 
 >
 > ```
 > mvn clean package install
@@ -67,16 +101,28 @@ mvn clean package spring-boot:repackage  k8s:build  k8s:resource k8s:push k8s:de
 >
 > 
 
+
+
+### k8s访问
+
+通过如下地址请求k8s上的服务，需要提前在本地的hosts文件增加域名
+
 ```
-<execution>
-	<phase>install</phase>
-    <goals>
-        <goal>resource</goal>
-        <goal>build</goal>
-        <goal>push</goal>
-        <goal>deploy</goal>
-    </goals>
-</execution>
+172.16.15.17	ingress.bjrdc17
+```
+
+
+
+1.eureka
+
+```
+http://ingress.bjrdc17:30080/sc-eureka/
+```
+
+2.consumer
+
+```
+
 ```
 
 

@@ -1,7 +1,10 @@
+management:
+  server:
+    port: 9084
 server:
   port: 8084
   servlet:
-    contextPath: /sc-eureka
+    contextPath: /sc-zuul
 eureka:
   instance:
     appname: zuul

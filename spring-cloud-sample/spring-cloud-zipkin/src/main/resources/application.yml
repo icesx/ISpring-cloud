@@ -1,15 +1,17 @@
+management:
+  server:
+    port: 9082
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
 server:
   port: 8082
   servlet:
-    contextPath: /sc-zipkin
+    contextPath: /
 spring:
   application:
     name: zipkin
 eureka:
   instance:
     appname: zipkin
-management:
-  metrics:
-    web:
-      server:
-        auto-time-requests: false

@@ -2,5 +2,16 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
-    statusPageUrlPath: ${server.servlet.contextPath}/actuator/health
-    healthCheckUrlPath: ${server.servlet.contextPath}/actuator/health
+    statusPageUrlPath: /actuator/health
+    healthCheckUrlPath: /actuator/health
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        security: INFO
+        web: INFO
+      hibernate: INFO
+      apache:
+        commons:
+          dbcp2: INFO

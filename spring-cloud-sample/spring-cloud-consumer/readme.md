@@ -8,11 +8,18 @@
 http://localhost:8086/sc-consumer/actuator/hystrix.stream
 ###Ribbon
 负载均衡 
+
+```
 curl http://localhost:8086/sc-consumer/ribbon/list
+curl http://ingress.bjrdc17:30080/sc-consumer/ribbon/list
+```
 
 ### feign to provider 
-curl http://localhost:8086/sc-consumer/feign/list
 
+```
+curl http://localhost:8086/sc-consumer/feign/list
+curl http://ingress.bjrdc17:30080/sc-consumer/feign/list
+```
 Feign是负责服务间内部调用消费，以及负责均衡的组件，但是和Eureka不一样，Feign没有Server这么一说，Feign本身就是个Client，它是可插拔的
 
 ### feign vs ribbon
@@ -27,3 +34,8 @@ Feign是负责服务间内部调用消费，以及负责均衡的组件，但是
 > 使用注解的方法请求，更加优雅
 
 最重要的是：它俩都支持软负载均衡
+
+### bootstrap
+> 使用bootstrap的原因是，bootstrap比application优先级高，故类似加载configserver这种事情需要放到bootstrap中做
+
+

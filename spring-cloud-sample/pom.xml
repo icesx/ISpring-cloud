@@ -25,7 +25,7 @@
 
 		<dependency>
 			<groupId>cn.xportal.sc</groupId>
-			<artifactId>spring-cloud-version-local</artifactId>
+			<artifactId>spring-cloud-version-k8s</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -42,20 +42,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/java</directory>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-			</resource>
-			<resource>
-				<directory>src/main/docker</directory>
-			</resource>
-			<resource>
-				<directory>src/main/jkube</directory>
-			</resource>
-		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -64,7 +51,13 @@
 					<mainClass>${start-class}</mainClass>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>kubernetes-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

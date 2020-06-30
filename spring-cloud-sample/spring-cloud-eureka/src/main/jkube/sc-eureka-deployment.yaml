@@ -14,9 +14,8 @@ spec:
         app: spring-cloud-eureka
     spec:
       hostAliases:
-      - ip: "172.16.15.9"
+      - ip: 172.16.15.7
         hostnames:
-        - "bjrdc9"
+        - bjrdc7
       containers:
       - imagePullPolicy: Always
-      

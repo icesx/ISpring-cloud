@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: sc-zuul-ingress
+  name: sc-zipkin-ingress
   namespace: bjrdc-dev
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "20M"
@@ -10,7 +10,7 @@ spec:
   - host: ingress.bjrdc17
     http:
       paths:
-      - path: /sc-zuul
+      - path: /zipkin
         backend:
-          serviceName: spring-cloud-zuul
-          servicePort: 8084
+          serviceName: spring-cloud-zipkin
+          servicePort: 8082

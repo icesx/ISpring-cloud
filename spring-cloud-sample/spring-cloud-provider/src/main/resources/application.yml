@@ -1,3 +1,6 @@
+management:
+  server:
+    port: 9083
 server:
   port: 8083
   servlet:
