@@ -10,3 +10,5 @@
 ### 管理界面
 
 http://localhost:8082/zipkin/
+
+http://ingress.bjrdc17:30080/zipkin/
