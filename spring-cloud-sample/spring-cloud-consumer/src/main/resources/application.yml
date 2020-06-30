@@ -1,15 +1,11 @@
 server:
   port: 8086
+  servlet:
+    contextPath: /sc-consumer
 eureka:
   instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: consumer
-
 spring:
-  sleuth:
-    sampler:
-      percentage: 1.0
   application:
     name: consumer
   cloud:
@@ -20,8 +16,6 @@ spring:
       fail-fast: true
       username: root
       password: i
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+  sleuth:
+    sampler:
+      percentage: 1.0

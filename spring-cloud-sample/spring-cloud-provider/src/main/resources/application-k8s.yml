@@ -1,8 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://root:i@spring-cloud-eureka.bjrdc-dev.svc.cluster.local:8080/eureka/
-
+      defaultZone: http://root:i@spring-cloud-eureka.bjrdc-dev.svc.cluster.local:8080/sc-eureka/eureka/
 spring:
   zipkin:
-    base-url: http://spring-cloud-zipkin.bjrdc-dev.svc.cluster.local:8082
+    base-url: http://spring-cloud-zipkin.bjrdc-dev.svc.cluster.local:8082/sc-zipkin

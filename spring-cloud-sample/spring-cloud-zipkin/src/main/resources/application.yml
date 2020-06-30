@@ -1,11 +1,12 @@
 server:
   port: 8082
+  servlet:
+    contextPath: /sc-zipkin
 spring:
   application:
     name: zipkin
+eureka:
   instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: zipkin
 management:
   metrics:

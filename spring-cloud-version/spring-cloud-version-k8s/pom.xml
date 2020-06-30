@@ -11,6 +11,12 @@
 		<artifactId>spring-cloud-version</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
+	<dependencies>
+		<dependency>
+			<groupId>cn.xportal.sc</groupId>
+			<artifactId>spring-cloud-version-public</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>
 

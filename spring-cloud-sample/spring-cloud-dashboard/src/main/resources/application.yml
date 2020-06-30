@@ -1,15 +1,15 @@
 server:
   port: 8085
+  servlet:
+    contextPath: /sc-dashboard
 eureka:
   instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: dashboard
 turbine:
   aggregator:
     clusterConfig: default
   appConfig: consumer
-  clusterNameExpression: "'default'"
+  clusterNameExpression: '''default'''
 spring:
   application:
     name: dashboard

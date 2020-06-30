@@ -1,21 +1,13 @@
 server:
   port: 8084
+  servlet:
+    contextPath: /sc-eureka
+eureka:
   instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: zuul
-
 spring:
   sleuth:
     sampler:
       percentage: 1.0
   application:
     name: zuul
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config
-      fail-fast: true
-      username: root
-      password: i

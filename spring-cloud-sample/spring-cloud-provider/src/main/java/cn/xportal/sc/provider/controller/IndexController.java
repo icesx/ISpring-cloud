@@ -25,7 +25,7 @@ public class IndexController {
 		return Mono.just("provider receive : " + msg);
 	}
 
-	@GetMapping("list")
+	@GetMapping(path="list")
 	public Flux<Integer> list() {
 		List<Integer> list = new ArrayList<>();
 		list.add(8);

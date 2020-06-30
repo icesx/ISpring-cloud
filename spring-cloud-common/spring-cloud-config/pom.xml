@@ -16,12 +16,7 @@
 
 		<dependency>
 			<groupId>cn.xportal.sc</groupId>
-			<artifactId>spring-cloud-support</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.xportal.sc</groupId>
-			<artifactId>spring-cloud-version-k8s</artifactId>
+			<artifactId>spring-cloud-version-local</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

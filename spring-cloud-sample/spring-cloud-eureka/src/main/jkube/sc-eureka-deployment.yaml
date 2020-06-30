@@ -13,5 +13,10 @@ spec:
       labels:
         app: spring-cloud-eureka
     spec:
+      hostAliases:
+      - ip: "172.16.15.9"
+        hostnames:
+        - "bjrdc9"
       containers:
       - imagePullPolicy: Always
+      

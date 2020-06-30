@@ -1,5 +1,7 @@
 server:
   port: 8081
+  servlet:
+    contextPath: /sc-config
 spring:
   security:
     basic:
@@ -13,24 +15,21 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/icesx/ISpring-cloud
-          searchPaths: spring-cloud-common/spring-cloud-config/config
-          username: 
-          password: 
+          uri: http://bjrdc7:8090/moa/spring-cloud-configdata.git
+          searchPaths: config-properties
+          username: bjrdc-public3
+          password: zgjx@321
 eureka:
   instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: config
-    
 logging:
   level:
-    root: INFO        
+    root: INFO
     org:
-      springframework: 
+      springframework:
         security: INFO
-        web: INFO    
-      hibernate: INFO        
+        web: INFO
+      hibernate: INFO
       apache:
         commons:
-          dbcp2: INFO 
+          dbcp2: INFO

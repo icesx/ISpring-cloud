@@ -1,11 +1,10 @@
 server:
   port: 8083
+  servlet:
+    contextPath: /sc-provider
 eureka:
   instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: provider
-
 spring:
   application:
     name: provider

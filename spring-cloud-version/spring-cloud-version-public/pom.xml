@@ -4,18 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-cloud-version</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>spring-cloud-version-public</artifactId>
+	<packaging>jar</packaging>
 	<parent>
 		<groupId>cn.xportal.sc</groupId>
-		<artifactId>ISpring-cloud</artifactId>
+		<artifactId>spring-cloud-version</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<modules>
-		<module>spring-cloud-version-local</module>
-		<module>spring-cloud-version-public</module>
-		<module>spring-cloud-version-k8s</module>
-	</modules>
 
 </project>
 
