@@ -8,14 +8,6 @@ eureka:
 spring:
   application:
     name: consumer
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config
-      fail-fast: true
-      username: root
-      password: i
   sleuth:
     sampler:
       percentage: 1.0

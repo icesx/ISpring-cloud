@@ -173,7 +173,7 @@ ISpring-cloud
 > 2. 使用maven命令将所有的微服务部署到k8s
 >
 >    ```
->    mvn clean package deploy
+>    clean package spring-boot:repackage  k8s:build  k8s:resource k8s:push k8s:undeploy k8s:deploy
 >    ```
 >
 > 3. 通过k8s相关命令查看部署的情况
