@@ -13,9 +13,19 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<modules>
-		<module>k8s-provider</module>
-		<module>k8s-consumer</module>
+		<module>spring-cloud-k8s-provider</module>
+		<module>spring-cloud-k8s-consumer</module>
 	</modules>
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>${start-class}</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
 

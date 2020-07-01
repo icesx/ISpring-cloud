@@ -11,12 +11,12 @@ import java.util.List;
 @FeignClient(name = "provider",path="sc-provider",fallback = MFeignClientFallback.class, configuration = MFeignConfig.class)
 public interface MFeignClient {
     // 这是被请求微服务的地址，也就是provider的地址
-    @GetMapping(value = "/test/{msg}")
+    @GetMapping(value = "/index/{msg}")
     String sayHelloWorld(@PathVariable("msg") String msg);
 
-    @GetMapping(value = "/test/list")
+    @GetMapping(value = "/index/list")
     List<Integer> list();
 
-    @GetMapping(value = "/test/list")
+    @GetMapping(value = "/index/list")
     Integer[] array();
 }

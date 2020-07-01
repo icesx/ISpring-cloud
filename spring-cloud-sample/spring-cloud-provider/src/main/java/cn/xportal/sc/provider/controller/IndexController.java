@@ -14,7 +14,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("test")
+@RequestMapping("index")
 public class IndexController {
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 

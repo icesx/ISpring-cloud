@@ -32,7 +32,7 @@ public class RibbonController {
 	@GetMapping("/ribbon/{wd}")
 	@HystrixCommand(fallbackMethod = "fallbackMethod")
 	public Mono<String> sayHelloWorld(@PathVariable("wd") String parm) {
-		String res = this.restTemplate.getForObject("http://"+PROVIDER+"/test/" + parm, String.class);
+		String res = this.restTemplate.getForObject("http://" + PROVIDER + "/index/" + parm, String.class);
 		return Mono.just(res);
 	}
 

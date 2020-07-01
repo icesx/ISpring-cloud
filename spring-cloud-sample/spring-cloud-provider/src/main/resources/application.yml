@@ -1,16 +1,38 @@
-management:
-  server:
-    port: 9083
 server:
   port: 8083
-  servlet:
-    contextPath: /sc-provider
 eureka:
   instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: provider
 spring:
   application:
     name: provider
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      fail-fast: true
+      username: root
+      password: i
   sleuth:
     sampler:
       percentage: 1.0
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://bjrdc37:3306/spring_boot?useUnicode=true&characterEncoding=utf-8
+    username: bjrdc
+    password: xjgz@123
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+  view:
+    prefix: /WEB-INF/views/
+    suffix: .jsp
