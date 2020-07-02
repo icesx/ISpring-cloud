@@ -25,3 +25,6 @@ spring:
 eureka:
   instance:
     appname: config
+    metadataMap:
+      configPath: ${server.servlet.contextPath}
+      

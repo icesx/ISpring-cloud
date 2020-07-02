@@ -14,9 +14,9 @@ spec:
         app: spring-cloud-provider
     spec:
       hostAliases:
-      - ip: 172.16.15.36
+      - ip: 172.16.15.37
         hostnames:
-        - bjrdc36
+        - bjrdc37
       containers:
       - name: provider-server
         image: bjrdc206.reg/bjrdc-dev/spring-cloud-provider:0.0.1-SNAPSHOT
