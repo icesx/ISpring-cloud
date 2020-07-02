@@ -1,5 +1,7 @@
-ISpring-cloud
+spring-cloud-sample
 ====
+
+> 将spring-cloud原生微服务移植到k8s上。
 
 ## 准备工作
 
@@ -183,10 +185,6 @@ ISpring-cloud
 >    ```
 >
 >    
-
-## spring-cloud-k8s
-
-
 
 ## spring-cloud-common
 
