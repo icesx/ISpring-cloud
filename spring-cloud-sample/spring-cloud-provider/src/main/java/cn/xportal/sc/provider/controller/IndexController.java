@@ -43,4 +43,13 @@ public class IndexController {
 		Flux<Integer> userFlux = Flux.fromIterable(list);
 		return userFlux;
 	}
+
+	@GetMapping(path = "array")
+	public Flux<Integer> array() {
+		List<Integer> list = new ArrayList<>();
+		list.add(8);
+		list.add(93);
+		Flux<Integer> userFlux = Flux.fromIterable(list);
+		return userFlux;
+	}
 }

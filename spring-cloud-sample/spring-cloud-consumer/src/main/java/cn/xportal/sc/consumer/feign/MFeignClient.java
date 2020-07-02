@@ -17,6 +17,6 @@ public interface MFeignClient {
     @GetMapping(value = "/index/list")
     List<Integer> list();
 
-    @GetMapping(value = "/index/list")
+    @GetMapping(value = "/index/array")
     Integer[] array();
 }

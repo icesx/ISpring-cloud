@@ -12,6 +12,7 @@ import cn.xportal.sc.provider.entity.UserEntity;
 import cn.xportal.sc.provider.service.IUserService;
 
 @RestController
+@RequestMapping("user")
 public class UserController {
 
 	@Autowired
