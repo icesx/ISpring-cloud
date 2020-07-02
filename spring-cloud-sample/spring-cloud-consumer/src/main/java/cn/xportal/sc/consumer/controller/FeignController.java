@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import cn.xportal.sc.consumer.bean.UserEntity;
 import cn.xportal.sc.consumer.feign.MFeignClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -14,26 +15,31 @@ import reactor.core.publisher.Mono;
 @RestController
 public class FeignController {
 
-    @Autowired
-    private MFeignClient feignClient;
+	@Autowired
+	private MFeignClient feignClient;
 
-    @GetMapping("/feign/{wd}")
-    public Mono<String> sayHelloWorld(@PathVariable("wd") String parm) {
-        String result = feignClient.sayHelloWorld(parm);
-        return Mono.just(result);
-    }
+	@GetMapping("/feign/{wd}")
+	public Mono<String> sayHelloWorld(@PathVariable("wd") String parm) {
+		String result = feignClient.sayHelloWorld(parm);
+		return Mono.just(result);
+	}
 
-    @GetMapping("/feign/list")
-    public Flux<Integer> list() {
-        List<Integer> list = feignClient.list();
-        Flux<Integer> userFlux = Flux.fromIterable(list);
-        return userFlux;
-    }
+	@GetMapping("/feign/list")
+	public Flux<Integer> list() {
+		List<Integer> list = feignClient.list();
+		Flux<Integer> userFlux = Flux.fromIterable(list);
+		return userFlux;
+	}
 
-    @GetMapping("/feign/array")
-    public Flux<Integer> array() {
-        Integer[] arrays = feignClient.array();
-        Flux<Integer> userFlux = Flux.fromArray(arrays);
-        return userFlux;
-    }
+	@GetMapping("/feign/array")
+	public Flux<Integer> array() {
+		Integer[] arrays = feignClient.array();
+		Flux<Integer> userFlux = Flux.fromArray(arrays);
+		return userFlux;
+	}
+
+	@GetMapping("/feign/users")
+	public Flux<UserEntity> getUsers() {
+		return Flux.fromArray(feignClient.getUsers());
+	}
 }
