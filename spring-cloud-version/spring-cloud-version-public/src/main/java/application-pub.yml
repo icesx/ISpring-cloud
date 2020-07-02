@@ -4,6 +4,8 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     statusPageUrlPath: /actuator/health
     healthCheckUrlPath: /actuator/health
+    metadataMap:
+      configPath: ${server.servlet.contextPath}
 logging:
   level:
     root: INFO

@@ -68,7 +68,13 @@
 					<mainClass>${start-class}</mainClass>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>kubernetes-maven-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
