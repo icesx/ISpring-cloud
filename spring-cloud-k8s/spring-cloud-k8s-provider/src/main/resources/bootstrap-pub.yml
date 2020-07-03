@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      fail-fast: false
+      username: root
+      password: i
+      label: master

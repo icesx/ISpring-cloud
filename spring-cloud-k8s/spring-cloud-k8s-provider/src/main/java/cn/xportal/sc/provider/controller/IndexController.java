@@ -14,7 +14,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("test")
+@RequestMapping("index")
 public class IndexController {
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
@@ -27,10 +27,9 @@ public class IndexController {
 	@GetMapping("list")
 	public Flux<Integer> list() {
 		List<Integer> list = new ArrayList<>();
-		list.add(8);
-		list.add(22);
-		list.add(75);
-		list.add(93);
+		list.add(1);
+		list.add(3);
+		list.add(5);
 		Flux<Integer> userFlux = Flux.fromIterable(list);
 		return userFlux;
 	}

@@ -1,0 +1,13 @@
+management:
+  server:
+    port: 9093
+server:
+  port: 8093
+  servlet:
+    contextPath: /sc-k8s-provider
+eureka:
+  instance:
+    appname: k8s-provider
+spring:
+  application:
+    name: k8s-provider

@@ -1,0 +1,16 @@
+management:
+  server:
+    port: 9086
+server:
+  port: 8086
+  servlet:
+    contextPath: /sc-consumer
+eureka:
+  instance:
+    appname: k8s-consumer
+spring:
+  application:
+    name: k8s-consumer
+  sleuth:
+    sampler:
+      percentage: 1.0

@@ -184,6 +184,20 @@ spring-cloud-sample
 >    
 >    ```
 >
+> 4. 在k8s上访问
+>
+>    通过zuul
+>
+>    ```
+>    curl ingress.bjrdc17:30080/sc-zuul/consumer/sc-consumer/feign/users
+>    ```
+>
+>    直接访问consumer
+>
+>    ```
+>    curl ingress.bjrdc17:30080/sc-consumer/feign/users
+>    ```
+>
 >    
 
 ## spring-cloud-common

@@ -16,6 +16,34 @@
 		<module>spring-cloud-k8s-provider</module>
 		<module>spring-cloud-k8s-consumer</module>
 	</modules>
+	<properties>
+		<springcloud.kubernetes.version>1.0.1.RELEASE</springcloud.kubernetes.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>cn.xportal.sc</groupId>
+				<artifactId>spring-cloud-version-k8s</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-kubernetes-core</artifactId>
+				<version>${springcloud.kubernetes.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-kubernetes-discovery</artifactId>
+				<version>${springcloud.kubernetes.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-kubernetes-ribbon</artifactId>
+				<version>${springcloud.kubernetes.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
