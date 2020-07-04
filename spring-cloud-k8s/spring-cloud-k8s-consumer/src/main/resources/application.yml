@@ -4,13 +4,21 @@ management:
 server:
   port: 8086
   servlet:
-    contextPath: /sc-consumer
-eureka:
-  instance:
-    appname: k8s-consumer
+    contextPath: /sc-k8s-consumer
 spring:
   application:
     name: k8s-consumer
   sleuth:
     sampler:
       percentage: 1.0
+backend:
+  ribbon:
+    eureka:
+      enabled: false
+    client:
+      enabled: true
+    ServerListRefreshInterval: 5000
+ 
+spring-cloud-k8s-provider:
+  ribbon:
+    KubernetesNamespace: bjrdc-dev

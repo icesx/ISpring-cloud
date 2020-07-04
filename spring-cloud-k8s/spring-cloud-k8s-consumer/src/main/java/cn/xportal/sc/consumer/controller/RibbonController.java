@@ -19,7 +19,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 public class RibbonController {
-	private static final String PROVIDER = "provider";
+	private static final String PROVIDER = "spring-cloud-k8s-provider";
 
 	private static final Logger logger = LoggerFactory.getLogger(RibbonController.class);
 
@@ -32,7 +32,7 @@ public class RibbonController {
 	@GetMapping("/ribbon/{wd}")
 	@HystrixCommand(fallbackMethod = "fallbackMethod")
 	public Mono<String> sayHelloWorld(@PathVariable("wd") String parm) {
-		String res = this.restTemplate.getForObject("http://"+PROVIDER+"/test/" + parm, String.class);
+		String res = this.restTemplate.getForObject("http://" + PROVIDER + "/index/" + parm, String.class);
 		return Mono.just(res);
 	}
 
@@ -46,6 +46,6 @@ public class RibbonController {
 	}
 
 	public Mono<String> fallbackMethod(@PathVariable("wd") String parm) {
-		return Mono.just("ribbon fallback");
+		return Mono.just("ribbon fallback on " + this);
 	}
 }

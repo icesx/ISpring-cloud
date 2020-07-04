@@ -15,7 +15,6 @@ spec:
     spec:
       containers:
       - name: eureka-server
-        image: bjrdc206.reg/bjrdc-dev/spring-cloud-consumer:0.0.1-SNAPSHOT
         imagePullPolicy: Always
         ports:
         - name: http

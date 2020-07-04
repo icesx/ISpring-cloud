@@ -19,8 +19,8 @@ import org.springframework.web.client.RestTemplate;
 @EnableCircuitBreaker
 @EnableHystrix
 @SpringBootApplication
-public class ConsumerApplication {
-	private static final Logger logger = LoggerFactory.getLogger(ConsumerApplication.class);
+public class K8sConsumerApplication {
+	private static final Logger logger = LoggerFactory.getLogger(K8sConsumerApplication.class);
 
 	@Autowired
 	private RestTemplateBuilder builder;
@@ -33,6 +33,6 @@ public class ConsumerApplication {
 
 	public static void main(String[] args) {
 		logger.info("start Consumer..."); 
-		SpringApplication.run(ConsumerApplication.class, args);
+		SpringApplication.run(K8sConsumerApplication.class, args);
 	}
 }

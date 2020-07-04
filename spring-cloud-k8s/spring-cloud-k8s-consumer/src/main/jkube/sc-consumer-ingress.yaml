@@ -10,7 +10,7 @@ spec:
   - host: ingress.bjrdc17
     http:
       paths:
-      - path: /sc-consumer
+      - path: /sc-k8s-consumer
         backend:
           serviceName: spring-cloud-k8s-consumer
           servicePort: 8096

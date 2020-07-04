@@ -1,9 +1,6 @@
 spring:
   cloud:
-    config:
-      discovery:
+    kubernetes:
+      enabled: true
+      reload:
         enabled: true
-        service-id: config
-      fail-fast: false
-      username: root
-      password: i
