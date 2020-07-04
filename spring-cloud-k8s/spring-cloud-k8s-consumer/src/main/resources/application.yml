@@ -1,8 +1,8 @@
 management:
   server:
-    port: 9086
+    port: 9096
 server:
-  port: 8086
+  port: 8096
   servlet:
     contextPath: /sc-k8s-consumer
 spring:

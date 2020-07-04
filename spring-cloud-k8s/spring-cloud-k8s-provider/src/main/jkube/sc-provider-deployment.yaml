@@ -13,6 +13,7 @@ spec:
       labels:
         app: spring-cloud-k8s-provider
     spec:
+      serviceAccountName: default
       hostAliases:
       - ip: 172.16.15.37
         hostnames:
