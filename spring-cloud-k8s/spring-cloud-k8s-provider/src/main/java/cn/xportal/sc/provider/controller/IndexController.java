@@ -1,5 +1,6 @@
 package cn.xportal.sc.provider.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,8 @@ import reactor.core.publisher.Mono;
 public class IndexController {
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
+	private final String hostName = System.getenv("HOSTNAME");
+
 	@GetMapping("{msg}")
 	public Mono<String> sayHelloWorld(@PathVariable("msg") String msg) {
 		logger.info("come on :{}", msg);
@@ -33,4 +36,10 @@ public class IndexController {
 		Flux<Integer> userFlux = Flux.fromIterable(list);
 		return userFlux;
 	}
+
+	@RequestMapping("/host")
+	public String getName() {
+		return this.hostName + ", " + LocalDate.now().toString();
+	}
+
 }

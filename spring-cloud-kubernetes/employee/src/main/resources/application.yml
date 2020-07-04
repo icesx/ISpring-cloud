@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: employee
-  data:
-    mongodb:
-      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb/${MONGO_DATABASE}
