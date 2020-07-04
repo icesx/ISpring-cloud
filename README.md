@@ -69,7 +69,29 @@
 | spring-boot  |                          |
 | spring-cloud |                          |
 
+## 基本概念
 
+1. enureka
+
+   > spring自带的服务发现，也可以被其他的组件替换。
+
+2. feign
+
+   > 客户端负载均衡，使用注解的方式使用，很优雅
+
+3. ribbon
+
+   > 客户端负载均衡，需要resttemplate配合使用
+
+4. zuul
+
+   > 网管服务，可以将用户请求代理到不同的service上
+
+5. zipkin
+
+   > 服务追踪
+
+   
 
 ## 项目结构
 
@@ -79,10 +101,6 @@
 ├── spring-cloud-k8s
 │   ├── k8s-consumer
 │   └── k8s-provider
-├── spring-cloud-kubernetes-examples
-│   ├── kubernetes-hello-world-example
-│   ├── kubernetes-leader-election-example
-│   └── kubernetes-reload-example
 ├── spring-cloud-sample
 │   ├── spring-cloud-consumer
 │   ├── spring-cloud-dashboard

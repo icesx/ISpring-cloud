@@ -3,8 +3,8 @@ management:
     port: 9093
 server:
   port: 8093
-  #servlet:
-    #contextPath: /sc-k8s-provider
+  servlet:
+    contextPath: /sc-k8s-provider
 spring:
   application:
     name: k8s-provider

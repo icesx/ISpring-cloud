@@ -19,7 +19,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 public class RibbonController {
-	private static final String PROVIDER = "spring-cloud-k8s-provider";
+	private static final String PROVIDER = "spring-cloud-k8s-provider/sc-k8s-provider";
 
 	private static final Logger logger = LoggerFactory.getLogger(RibbonController.class);
 
