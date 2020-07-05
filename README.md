@@ -103,7 +103,7 @@
 │   ├── spring-cloud-k8s-gateway
 │   ├── spring-cloud-k8s-init-yaml
 │   └── spring-cloud-k8s-provider
-├── spring-cloud-sample
+├── spring-cloud-native
 │   ├── spring-cloud-consumer
 │   ├── spring-cloud-dashboard
 │   ├── spring-cloud-eureka
@@ -117,7 +117,7 @@
 
 
 
-## spring-cloud-sample
+## spring-cloud-native
 
 > 使用spring-cloud的原生组件，将整个组件打包成docker，部署到k8s上。
 
@@ -202,19 +202,21 @@
 
 #### docker
 
-
-
-#### k8s
-
-
+> 一般情况下不需要使用docker，但是在进行镜像编辑、修改、优化的时候，需要使用docker的命令进行相关的操作。
 
 ### actuator/health
 
-
+spring-cloud-actuator提供的健康检查的地址，在部署到k8s的时候，在yaml中需要声明。
 
 ## spring-cloud-k8s
 
+> spring-cloud-native 是spring提供的一整套的组件，在部署到k8s的时候，按照云原生的理念，需要将spring-cloud整合到k8s，而不是简单的部署到k8s
 
+### 与spring-cloud-native的不同
+
+>in k8s的模式中，服务发现被k8s替代，则不需要部署eureka。其他的zuul、feign、ribbon都可以使用spring-cloud-native中的。
+>
+>config有两种做法，一种使用spring-cloud-config，另一种使用k8s的configmap。两种方式均可，但是考虑到git的整合程度，建议仍然使用spring-cloud-config——将spring-cloud-config作为服务部署到k8s中。
 
 ## spring-cloud-common
 

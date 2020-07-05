@@ -15,15 +15,12 @@
 	<modules>
 		<module>spring-cloud-k8s-provider</module>
 		<module>spring-cloud-k8s-consumer</module>
+		<module>spring-cloud-k8s-gateway</module>
 	</modules>
 	<properties>
 		<springcloud.kubernetes.version>1.0.1.RELEASE</springcloud.kubernetes.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>cn.xportal.sc</groupId>
@@ -33,6 +30,22 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-kubernetes-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-kubernetes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-kubernetes-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-kubernetes-discovery</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-kubernetes-ribbon</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

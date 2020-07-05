@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-cloud-k8s-gateway
+  namespace: bjrdc-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-cloud-k8s-gateway
+  template:
+    metadata:
+      labels:
+        app: spring-cloud-k8s-gateway
+    spec:
+      containers:
+      - name: eureka-server
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 809t
