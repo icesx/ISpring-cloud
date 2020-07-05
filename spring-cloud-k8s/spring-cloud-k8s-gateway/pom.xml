@@ -34,7 +34,7 @@
 	</dependencies>
 
 	<properties>
-		<start-class>cn.xportal.sc.zuul.ZuulApplication</start-class>
+		<start-class>cn.xportal.sc.gateway.GatewayApplication</start-class>
 	</properties>
 	<build>
 		<plugins>

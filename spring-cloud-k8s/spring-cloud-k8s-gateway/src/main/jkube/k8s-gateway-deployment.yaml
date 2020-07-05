@@ -14,8 +14,8 @@ spec:
         app: spring-cloud-k8s-gateway
     spec:
       containers:
-      - name: eureka-server
+      - name: spring-cloud-k8s-gateway-server
         imagePullPolicy: Always
         ports:
         - name: http
-          containerPort: 809t
+          containerPort: 8097

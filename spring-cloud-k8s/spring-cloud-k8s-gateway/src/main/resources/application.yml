@@ -3,11 +3,6 @@ management:
     port: 9097
 server:
   port: 8097
-service:
-  servlet:
-    contextPath:
-      consumer: sc-k8s-consumer
-      provider: sc-k8s-provider
 spring:
   cloud:
     gateway:
@@ -18,11 +13,17 @@ spring:
         - Path=/provider/**
         filters:
         - StripPrefix=1
-        - RewritePath=/(?<segment>.*), /${service.servlet.contextPath.provider}/$\{segment}
+        - RewritePath=/(?<segment>.*), /${bjrdc.service.servlet.contextPath.provider}/$\{segment}
       - id: consumer
         uri: http://spring-cloud-k8s-consumer.bjrdc-dev.svc.cluster.local:8096
         predicates:
         - Path=/consumer/**
         filters:
         - StripPrefix=1
-        - RewritePath=/(?<segment>.*), /${service.servlet.contextPath.consumer}/$\{segment}
+        - RewritePath=/(?<segment>.*), /${bjrdc.service.servlet.contextPath.consumer}/$\{segment}
+bjrdc:
+  service:
+    servlet:
+      contextPath:
+        consumer: sc-k8s-consumer
+        provider: sc-k8s-provider
