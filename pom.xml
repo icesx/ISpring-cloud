@@ -9,7 +9,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ISpring-cloud</name>
 	<modules>
-		<module>spring-cloud-sample</module>
+		<module>spring-cloud-native</module>
 		<module>spring-cloud-common</module>
 		<module>spring-cloud-k8s</module>
 		<module>spring-cloud-version</module>

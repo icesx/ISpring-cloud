@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>cn.xportal.sc</groupId>
-		<artifactId>spring-cloud-sample</artifactId>
+		<artifactId>spring-cloud-native</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<dependencies>

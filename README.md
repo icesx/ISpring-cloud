@@ -96,11 +96,13 @@
 ## 项目结构
 
 ├── spring-cloud-common
-│   ├── spring-cloud-config		spring-cloud中的配置服务器
-│   └── spring-cloud-support	sping-cloud相关的工具类
+│   ├── spring-cloud-config
+│   └── spring-cloud-support
 ├── spring-cloud-k8s
-│   ├── k8s-consumer
-│   └── k8s-provider
+│   ├── spring-cloud-k8s-consumer
+│   ├── spring-cloud-k8s-gateway
+│   ├── spring-cloud-k8s-init-yaml
+│   └── spring-cloud-k8s-provider
 ├── spring-cloud-sample
 │   ├── spring-cloud-consumer
 │   ├── spring-cloud-dashboard
@@ -110,7 +112,8 @@
 │   └── spring-cloud-zuul
 └── spring-cloud-version
     ├── spring-cloud-version-k8s
-    └── spring-cloud-version-local
+    ├── spring-cloud-version-local
+    └── spring-cloud-version-public
 
 
 
