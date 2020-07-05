@@ -7,4 +7,4 @@ server:
     contextPath: /sc-k8s-provider
 spring:
   application:
-    name: k8s-provider
+    name: provider

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,10 +22,18 @@ public class IndexController {
 
 	private final String hostName = System.getenv("HOSTNAME");
 
+	@Value("${cn.xportal.cs.config.base}")
+	private String propertyFromConfig;
+
 	@GetMapping("{msg}")
 	public Mono<String> sayHelloWorld(@PathVariable("msg") String msg) {
 		logger.info("come on :{}", msg);
 		return Mono.just("provider receive : " + msg);
+	}
+
+	@GetMapping("/")
+	public Mono<String> index() {
+		return Mono.just("config :" + propertyFromConfig);
 	}
 
 	@GetMapping("list")

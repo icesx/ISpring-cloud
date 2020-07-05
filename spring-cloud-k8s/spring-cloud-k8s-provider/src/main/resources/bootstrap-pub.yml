@@ -2,4 +2,13 @@ spring:
   cloud:
     kubernetes:
       config:
-        namespace: bjrdc-dev
+        enabled: true
+      reload:
+        enabled: true
+    config:
+      uri: http://spring-cloud-config.bjrdc-dev.svc.cluster.local:8081/sc-config/
+# if reload.enabled=true,then management.endpoint.restart.enabled must is true
+management:
+  endpoint:
+    restart:
+      enabled: true
