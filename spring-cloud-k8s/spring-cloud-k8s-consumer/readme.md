@@ -10,7 +10,7 @@ k8s-consumer
 
 ### 启动与测试
 
-直接在eclipse上启动`cn.xportal.sc.consumerK8sConsumerApplication`通过如下的命令访问服务
+直接在eclipse上启动`cn.xportal.sc.consumerK8sConsumerApplication`，通过如下的命令访问服务
 
 ```
 curl localhost:8086/sc-k8s-consumer/feign/list
