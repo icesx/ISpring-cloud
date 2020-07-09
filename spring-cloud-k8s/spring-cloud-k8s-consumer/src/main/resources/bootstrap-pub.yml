@@ -11,4 +11,8 @@ spring:
 management:
   endpoint:
     restart:
-      enabled: true      
+      enabled: true  
+  endpoints:
+    web:
+      exposure:
+        include: '*'          

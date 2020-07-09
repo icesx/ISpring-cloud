@@ -30,3 +30,11 @@ curl localhost:8086/sc-k8s-consumer/ribbon/list
 > ```
 >
 > spring-cloud-k8s-provider为provider在k8s集群中的namespace，否则consumer无法找到provider的service
+
+### refresh config
+
+```
+curl localhost:9096/actuator/refresh -d {} -H "Content-Type: application/json"
+
+```
+
