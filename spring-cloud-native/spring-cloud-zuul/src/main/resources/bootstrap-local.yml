@@ -5,4 +5,4 @@ eureka:
 
 spring:
   zipkin:
-    base-url: http://localhost:8082/sc-eureka
+    base-url: http://localhost:8082

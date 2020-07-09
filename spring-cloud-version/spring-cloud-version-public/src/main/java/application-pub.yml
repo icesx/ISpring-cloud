@@ -17,3 +17,6 @@ logging:
       apache:
         commons:
           dbcp2: INFO
+spring:
+  main:
+    allow-bean-definition-overriding: true          
