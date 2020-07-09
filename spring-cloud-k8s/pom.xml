@@ -16,6 +16,7 @@
 		<module>spring-cloud-k8s-provider</module>
 		<module>spring-cloud-k8s-consumer</module>
 		<module>spring-cloud-k8s-gateway</module>
+		<module>spring-cloud-k8s-configmap</module>
 	</modules>
 	<properties>
 		<springcloud.kubernetes.version>1.0.1.RELEASE</springcloud.kubernetes.version>

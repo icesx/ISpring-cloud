@@ -2,12 +2,10 @@ management:
   server:
     port: 9096
 server:
-  port: 8096
-  servlet:
-    contextPath: /sc-k8s-consumer
+  port: 8098
 spring:
   application:
-    name: consumer
+    name: spring-cloud-k8s-configmap
   sleuth:
     sampler:
       percentage: 1.0
@@ -19,6 +17,3 @@ backend:
       enabled: true
     ServerListRefreshInterval: 5000
  
-spring-cloud-k8s-provider:
-  ribbon:
-    KubernetesNamespace: bjrdc-dev
