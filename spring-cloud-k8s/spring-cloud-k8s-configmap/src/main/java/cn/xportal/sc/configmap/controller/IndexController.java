@@ -23,7 +23,7 @@ public class IndexController {
 
 	@GetMapping("/")
 	public Mono<String> index() {
-		return Mono.just("@Value=" + base);
+		return Mono.just("from configmap cn.xportal.cs.config.base=" + base);
 	}
 
 }
