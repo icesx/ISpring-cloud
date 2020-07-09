@@ -2,21 +2,27 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: spring-cloud-k8s-configmap
+  namespace: bjrdc-dev
 data:
-  application.yml: |-
-    greeting:
-      message: Say Hello to the World
-    farewell:
-      message: Say Goodbye
+  application.yaml: |-
+    cn:
+      xportal:
+        cs:
+          config:
+            base: base 
     ---
     spring:
-      profiles: development
-    greeting:
-      message: Say Hello to the Developers
-    farewell:
-      message: Say Goodbye to the Developers
+      profiles: k8s
+    cn:
+      xportal:
+        cs:
+          config:
+            base: k8s 
     ---
     spring:
-      profiles: production
-    greeting:
-      message: Say Hello to the Ops
+      profiles: local
+    cn:
+      xportal:
+        cs:
+          config:
+            base: local 

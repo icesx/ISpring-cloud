@@ -5,5 +5,13 @@ spring:
     kubernetes:
       config:
         sources:
-          - name: ${spring.application.name}
-            namespace: bjrdc-dev
+        - name: ${spring.application.name}
+          namespace: bjrdc-dev
+management:
+  endpoint:
+    restart:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
